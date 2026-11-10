@@ -2,6 +2,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ArrayTime {
+    public static double getAverage(double values[], String prompt){
+        double sums = 0;
+        for(int count = 0; count < values.length; count++){
+            sums = values[count] + sums;
+        }
+        double avg2 = sums / values.length;
+        return avg2;
+    }
     static void main() {
         Random rnd = new Random();
         int increase = 0;
@@ -13,6 +21,7 @@ public class ArrayTime {
         boolean yeah3 = false;
         int imp = SafeInput.getRangedInt(in, "Gimme a value between 1 and 100", 1, 100);
         int found = 0;
+        double[] cool;
 
 
         int[] dataPoints = new int[100];
@@ -93,7 +102,8 @@ public class ArrayTime {
         } else {
             System.out.println("I don't know how but the minimum value in the array was freaking 100. What are the odds? Crazy low.");
         }
-
+        double avg4 = getAverage(new double[]{3, 5, 7, 10}, "Gimme an array of averages");
+        System.out.println("The average using the method I just made is " + avg4 + ".");
 
 
 
